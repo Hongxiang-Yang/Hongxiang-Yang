@@ -1,0 +1,188 @@
+/* 全局样式 */
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #fff;
+    color: #212121;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 头部样式 */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    color: #212121;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 导航栏样式 */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #212121;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+}
+
+/* 主内容区域样式 */
+main.container {
+    padding: 100px 10px 200px 50px;
+    color: #212121;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-gap: 20px;
+    min-height: calc(100vh - 140px);
+    box-sizing: border-box;
+}
+
+.left-column {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 25px;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.profile-photo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.profile-info {
+    margin-top: 0;
+    text-align: left;
+}
+
+.schools {
+    margin-top: -30px;
+    font-size: 14px;
+    line-height: 0.5;
+}
+
+.right-column {
+    display: grid;
+    margin-top: 15px;
+    margin-left: -25px;
+  
+    margin-right: 75px;
+    gap: 10px;
+    position: relative;
+}
+
+.introduction {
+    margin-left: 5px;
+    margin-top: -150px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #212121;
+}
+.sub-intro{
+    font-size: 32px;
+    font-weight: bold;
+    overflow: hidden; /* 确保文本超出部分隐藏 */
+    white-space: nowrap; /* 禁止文本换行 */
+    animation: typing 10s steps(22) infinite, gradientBackground 10s infinite alternate; /* 打字动画和渐变背景动画 */
+    background: linear-gradient(45deg, #7187f2, #2d82e3, #039158, #056fa4); /* 渐变背景 */
+    background-size: 600%; /* 背景尺寸，用于动画 */
+    color: transparent; /* 文字透明 */
+    -webkit-background-clip: text; /* 背景裁剪为文字 */
+    background-clip: text; /* 背景裁剪为文字 */
+  
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    10%{
+        width: 100%;
+    }
+    40%{
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    animation: floatBubble 3s infinite ease-in-out;
+}
+
+
+
+
+.bubble-2 {
+    top: 50%;
+    left: 70%;
+    background: radial-gradient(circle, rgba(165, 249, 165, 0.8), rgba(0, 160, 0, 0) 70%);
+}
+
+.bubble-3 {
+    top: 80%;
+    left: 40%;
+    background: radial-gradient(circle, rgba(218, 238, 218, 0.8), rgba(0, 192, 0, 0) 70%);
+}
+
+/* 底部样式 */
+footer {
+    color: #212121;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
