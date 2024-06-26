@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -59,4 +60,76 @@ footer {
     border-radius: 50%;
     display: block;
     margin: 0 auto 1rem auto;
+=======
+/* 设置全局字体和背景颜色 */
+body {
+    font-family: 'Source Code Pro', monospace; /* 设置全局字体为 Source Code Pro */
+    background-color: rgb(255, 255, 255); /* 设置背景颜色为深灰色 */
+    color: rgb(33, 33, 33); /* 设置字体颜色为浅灰色 */
+    margin: 0; /* 去掉默认的 margin */
+    overflow: hidden; /* 隐藏溢出的内容，防止滚动条出现 */
+}
+
+/* 设置头部样式 */
+header {
+    background-color: rgba(24, 24, 24,0.75); /* 设置背景颜色为75%透明的深灰色 */
+    color: rgb(209, 209, 209); /* 字体颜色为浅灰色 */
+    padding: 20px; /* 内边距为20像素 */
+    position: fixed; /* 固定位置 */
+    top: 0; /* 距离顶部0像素 */
+    right: 0; /* 距离右边0像素 */
+    z-index: 1000; /* 确保导航栏在最前 */
+    width: 100%; /* 宽度占满整个页面 */
+}
+
+/* 设置导航栏 ul 样式 */
+nav ul {
+    display: flex; /* 使用 Flexbox 布局 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0; /* 去掉默认的内边距 */
+    margin: 0; /* 去掉默认的外边距 */
+    justify-content: flex-end; /* 右对齐 */
+}
+
+/* 设置导航栏 li 样式 */
+nav ul li {
+    margin-right: 20px; /* 右侧外边距为20像素 */
+}
+
+/* 设置导航栏 a 样式 */
+nav ul li a {
+    color: rgb(255, 255, 255); /* 链接颜色为浅灰色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+/* 设置导航栏 a 悬停效果 */
+nav ul li a:hover {
+    text-decoration: underline; /* 悬停时显示下划线 */
+}
+
+/* 设置主内容区域样式 */
+main {
+    padding: 60px; /* 内边距为20像素 */
+    margin-top: 20px; /* 增加上边距以避开固定导航栏 */
+    color: rgb(33, 33, 33); /* 文字颜色为浅灰色 */
+}
+
+/* 设置底部样式 */
+footer {
+    background-color: rgba(24, 24, 24, 0.75); /* 设置背景颜色为75%透明的深灰色 */
+    color: rgb(209, 209, 209); /* 字体颜色为浅灰色 */
+    text-align: center; /* 文本居中对齐 */
+    padding: 5px; /* 内边距为10像素 */
+    position: fixed; /* 固定位置 */
+    bottom: 0; /* 距离底部0像素 */
+    width: 100%; /* 宽度占满整个页面 */
+}
+
+/* 设置个人照片样式 */
+.profile-photo {
+    width: 100%; /* 宽度设置为100% */
+    max-width: 200px; /* 最大宽度为200像素 */
+    height: auto; /* 高度自动调整 */
+    border-radius: 20px
+>>>>>>> 1aa3ede (Add profile photo and new pages)
 }
