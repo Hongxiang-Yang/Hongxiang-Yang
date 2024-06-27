@@ -50,22 +50,22 @@ nav ul li a:hover {
 
 /* 主内容区域样式 */
 main.container {
-    padding: 100px 10px 200px 50px;
+    padding: 100px 10px 200px 0px;
     color: #212121;
     display: grid;
-    grid-template-columns: 1.5fr 3fr;
-    grid-gap: 20px;
+    grid-template-columns: 0.5fr 3fr 9fr;
+    gap:40px;
     min-height: calc(100vh - 140px);
     box-sizing: border-box;
 }
 
+
 .left-column {
     margin-top: 20px;
-    margin-left: 50px;
-    margin-right: 25px;
     display: grid;
     grid-template-rows: auto auto;
     gap: 20px;
+    justify-content: center;
 }
 
 .profile-photo img {
@@ -76,8 +76,8 @@ main.container {
 }
 
 .profile-info {
-    margin-top: 0;
     text-align: left;
+    
 }
 
 .schools {
@@ -89,7 +89,7 @@ main.container {
 .right-column {
     display: grid;
     margin-top: 15px;
-    margin-left: -25px;
+    
   
     margin-right: 75px;
     gap: 10px;
