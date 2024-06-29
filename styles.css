@@ -49,7 +49,7 @@ nav ul li a:hover {
 }
 
 /* 主内容区域样式 */
-main.container {
+main.home-container{
     padding: 100px 10px 200px 0px;
     color: #212121;
     display: grid;
@@ -77,56 +77,75 @@ main.container {
 
 .profile-info {
     text-align: left;
-    
+    font-size:clamp(12px, 1.5vw, 18px);
 }
 
 .schools {
     margin-top: -30px;
-    font-size: 14px;
+    font-size:clamp(10px, 1.4vw, 14px);
     line-height: 0.5;
 }
 
-.right-column {
+.contact-info {
     display: grid;
-    margin-top: 15px;
-    
+    list-style: none;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:0.1vw;
+    padding: 0; /* 重置内边距 */
+    margin: 0;
+}
+
+a .fa-brands ,.fa-regular {
+    color: #4a4a4a; /* 深灰色 */
+    transition: color 0.3s; /* 平滑过渡效果 */
+}
+a:hover .fa-brands, a:hover .fa-regular {
+    color: #17b6a0; /* 淡蓝色 */
+}
+
+
+
+
+
+.right-column {
+    display: flexbox;
   
-    margin-right: 75px;
-    gap: 10px;
+    margin-right:10vw;
+    
     position: relative;
 }
 
-.introduction {
-    margin-left: 5px;
-    margin-top: -150px;
-    text-align: left;
-    font-size: 18px;
+
+.sub-intro {
+    
+    font-size: clamp(28px, 1.8vw,32px);
     font-weight: bold;
-    color: #212121;
+    overflow: hidden;
+    white-space: nowrap;
+    max-height: 75px;
+    animation: typing 10s steps(120) infinite, gradientBackground 4s infinite alternate;
+    background: linear-gradient(45deg, #7187f2, #2d82e3, #039158, #056fa4);
+    background-size: 600%;
+    color: transparent;
+    
+    background-clip: text;
+
+    
 }
-.sub-intro{
-    font-size: 32px;
-    font-weight: bold;
-    overflow: hidden; /* 确保文本超出部分隐藏 */
-    white-space: nowrap; /* 禁止文本换行 */
-    animation: typing 10s steps(22) infinite, gradientBackground 10s infinite alternate; /* 打字动画和渐变背景动画 */
-    background: linear-gradient(45deg, #7187f2, #2d82e3, #039158, #056fa4); /* 渐变背景 */
-    background-size: 600%; /* 背景尺寸，用于动画 */
-    color: transparent; /* 文字透明 */
-    -webkit-background-clip: text; /* 背景裁剪为文字 */
-    background-clip: text; /* 背景裁剪为文字 */
-  
-}
+
 @keyframes typing {
     0% {
         width: 0;
     }
+    5%{
+        width: 30%;
+    }
     10%{
         width: 100%;
+        
     }
-    40%{
-        width: 100%;
-    }
+
     100% {
         width: 100%;
     }
@@ -144,8 +163,23 @@ main.container {
     }
 }
 
+.introduction {
+   
+    margin-left: 5px;
+    
+    text-align:justify;
+    font-size: clamp(12px, 1.8vw,18px);
+    font-weight: regular;
+    color: #212121;
+}
 
 
+.highlight {
+    background: linear-gradient(45deg, #047656, #5d05a6,#03227e ); /* 蓝绿色渐变 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
 
 .bubble {
@@ -162,7 +196,7 @@ main.container {
 .bubble-2 {
     top: 50%;
     left: 70%;
-    background: radial-gradient(circle, rgba(165, 249, 165, 0.8), rgba(0, 160, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(165, 249, 165, 0.4), rgba(0, 160, 0, 0) 70%);
 }
 
 .bubble-3 {
@@ -186,3 +220,322 @@ footer {
     bottom: 0;
     z-index: 1000;
 }
+
+
+
+
+/* Experience 页面的样式 */
+main.experience-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    row-gap: 0;
+    position: relative; /* 添加 position: relative; */
+}
+
+.experience-page .sidebar {
+    
+    margin-left: 2vw;
+    padding: 20px;
+    position: relative; /* 添加 position: relative; */
+    border-radius: 10px;
+}
+
+.experience-page .vertical-nav {
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative; /* 添加 position: relative; */
+}
+
+.experience-page .vertical-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px; /* 设置时间轴线的位置 */
+    height: 100%;
+    width: 2px; /* 时间轴线的宽度 */
+    background: linear-gradient(90deg, rgba(2, 62, 125, 0.5), rgba(4, 122, 96, 0.5)); /* 初始渐变颜色和透明度 */
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+    z-index: -1; /* 确保时间轴线在导航项的下方 */
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.experience-page .nav-item {
+    padding: 15px;
+    margin: 20px 0 20px 40px; /* 修改外边距 */
+    font-size: clamp(12px, 1.4vw, 18px);
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    
+    cursor: pointer;
+    position: relative;
+}
+
+/* 公司名称样式 */
+.company-name {
+    font-weight: bold;
+}
+
+/* 时间样式 */
+.time-period {
+    color: rgba(0, 0, 0, 0.8); /* 设置淡一些的颜色 */
+}
+
+.experience-page .nav-item::after {
+    content: '';
+    position: absolute;
+    top: 44%;
+    left: -20px; /* 设置连接线的位置 */
+    width: 20px; /* 连接线的宽度 */
+    height: 2px; /* 连接线的高度 */
+    background: linear-gradient(90deg, rgba(2, 62, 125, 0.5), rgba(4, 122, 96, 0.5)); /* 初始渐变颜色和透明度 */
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+    transform: translateY(-50%);
+}
+
+.experience-page .nav-item:hover {
+    transform: scale(1.1);
+    
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+}
+
+
+.experience-page .main-content {
+    padding: 20px;
+    border-radius: 10px;
+    margin-right:10vw;
+    
+    position: relative;
+}
+
+.experience-page .main-content h3 {
+    
+    font-weight: bold; /* 设置 h3 的字体加粗 */
+    margin-bottom: 10px; /* 设置 h3 的下边距 */
+    background: linear-gradient(45deg, #047656, #0621b9,#077460 ); /* 蓝绿色渐变 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align:justify;
+    font-size: clamp(18px, 1.8vw,28px);
+}
+
+.experience-page .main-content p {
+   
+    color: #666666; /* 设置 p 的颜色 */
+    line-height: 1.5; /* 设置 p 的行高 */
+    margin-bottom: 15px; /* 设置 p 的下边距 */
+    text-align:justify;
+    font-size: clamp(12px, 1.8vw,18px);
+}
+
+
+
+
+
+/* Education 页面的样式 */
+main.education-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    row-gap: 0;
+    position: relative; /* 保持与 Experience 页面的一致性 */
+}
+
+.education-page .sidebar {
+    margin-left: 2vw;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.education-page .vertical-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.education-page .vertical-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px; /* 设置时间轴线的位置 */
+    height: 100%;
+    width: 2px; /* 时间轴线的宽度 */
+    background: linear-gradient(90deg, rgba(125, 2, 2, 0.5), rgba(96, 4, 4, 0.5)); /* 修改颜色以区分 */
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+    z-index: -1; /* 确保时间轴线在导航项的下方 */
+}
+
+.education-page .nav-item {
+    padding: 15px;
+    margin: 20px 0 20px 40px; /* 修改外边距 */
+    font-size: clamp(12px, 1.4vw, 18px);
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 学校名称样式 */
+.school-name {
+    font-weight: bold;
+}
+
+/* 时间样式 */
+.time-period {
+    color: rgba(0, 0, 0, 0.8); /* 设置淡一些的颜色 */
+}
+
+.education-page .nav-item::after {
+    content: '';
+    position: absolute;
+    top: 44%;
+    left: -20px; /* 设置连接线的位置 */
+    width: 20px; /* 连接线的宽度 */
+    height: 2px; /* 连接线的高度 */
+    background: linear-gradient(90deg, rgba(125, 2, 2, 0.5), rgba(96, 4, 4, 0.5)); /* 修改颜色以区分 */
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+    transform: translateY(-50%);
+}
+
+.education-page .nav-item:hover {
+    transform: scale(1.1);
+    background-size: 200% 200%;
+    animation: gradient-flow 4s linear infinite; /* 添加动画效果 */
+}
+
+.education-page .main-content {
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 10vw;
+    position: relative;
+}
+
+.education-page .main-content h3 {
+    font-weight: bold; /* 设置 h3 的字体加粗 */
+    margin-bottom: 10px; /* 设置 h3 的下边距 */
+    background: linear-gradient(45deg, #b90606, #b9162b,#b92460 ); /* 红色渐变 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align:justify;
+    font-size: clamp(18px, 1.8vw,28px);
+}
+
+.education-page .main-content p {
+    color: #666666; /* 设置 p 的颜色 */
+    line-height: 1.5; /* 设置 p 的行高 */
+    margin-bottom: 15px; /* 设置 p 的下边距 */
+    text-align:justify;
+    font-size: clamp(12px, 1.8vw,18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    gap: -100px;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+}
+
+
+.gallery {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto; /* 添加这行来实现水平居中 */
+}
+
+.gallery-item {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: center; /* 水平居中 */
+    
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+
+.modal-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    max-width: 50px;
+   
+    
+    border-radius: 8px;
+
+    scale: 47%;
+    
+    transform: translateY(-65%); /* 使用 translateY 将模态框向上移动 */
+}
+
+
+
+
+
